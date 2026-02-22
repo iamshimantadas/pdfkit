@@ -9,6 +9,7 @@ compress-pdf.php => Helps to compress pdf file, ex: 10MB -> 2MB/500K.B
 linux tools needed:
 sudo apt install ghostscript
 sudo apt-get install poppler-utils
+sudo apt install qpdf -y
 
 server configuration need to do:
 sudo nano /etc/php/YOUR_PHP_VERSION/apache2/php.ini
