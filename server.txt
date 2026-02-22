@@ -1,5 +1,0 @@
-sudo nano /etc/php/8.2/apache2/php.ini
-upload_max_filesize = 20M
-post_max_size = 20M
-max_execution_time = 300
-memory_limit = 256M
