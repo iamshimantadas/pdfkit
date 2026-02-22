@@ -1,19 +1,128 @@
-merge.php => responsible for merge 2 or more pdf files. user can able to do pdf ordering by dragging one above another.
+# 📄 PHP PDF Toolkit
 
-extract-page.php => It helps to extract any single page from the whole pdf file.
+A simple PHP-based PDF toolkit built for Linux servers.  
+This project allows users to merge, split, compress, extract text, and protect PDF files using open-source Linux tools.
 
-pdf-to-text.php => It helps to extract whole text from the pdf.
+---
 
-compress-pdf.php => Helps to compress pdf file, ex: 10MB -> 2MB/500K.B
+## 🚀 Features
 
-linux tools needed:
+### 1️⃣ merge.php
+- Merge 2 or more PDF files
+- Drag & drop reordering before merge
+
+### 2️⃣ extract-page.php
+- Extract any single page from a PDF file
+
+### 3️⃣ pdf-to-text.php
+- Extract full text from a PDF
+
+### 4️⃣ compress-pdf.php
+- Compress PDF file  
+- Example: 10MB → 2MB / 500KB (depends on content)
+
+### 5️⃣ protect-pdf.php
+- Protect PDF with password (256-bit encryption using qpdf)
+
+---
+
+# 🐧 Required Linux Tools
+
+Install the following tools on Ubuntu/Debian:
+
+```bash
+sudo apt update
 sudo apt install ghostscript
-sudo apt-get install poppler-utils
+sudo apt install poppler-utils
 sudo apt install qpdf -y
+```
 
-server configuration need to do:
+---
+
+# ⚙️ Server Configuration (Important)
+
+Edit your PHP configuration file:
+
+```bash
 sudo nano /etc/php/YOUR_PHP_VERSION/apache2/php.ini
+```
+
+Update these values:
+
+```
 upload_max_filesize = 20M
 post_max_size = 20M
 max_execution_time = 300
 memory_limit = 256M
+```
+
+After editing:
+
+```bash
+sudo systemctl restart apache2
+```
+
+---
+
+# 📁 Required Folder Structure
+
+Create required folders:
+
+```bash
+mkdir merge split uploads text_output compressed protected
+```
+
+Set proper permissions:
+
+```bash
+sudo chmod 755 merge/ split/ uploads/ text_output/ compressed/ protected/
+```
+
+---
+
+# 🛠 Technologies Used
+
+- PHP
+- Ghostscript
+- Poppler-utils (pdfunite, pdftotext, etc.)
+- qpdf
+
+---
+
+# 🔐 Security Note
+
+- Always validate uploaded files
+- Restrict file types to PDF only
+- Use `escapeshellarg()` when executing shell commands
+- In production, avoid using `777` permissions — use proper ownership instead
+
+---
+
+# 📌 Recommended Production Setup
+
+Instead of 777 permissions:
+
+```bash
+sudo chown -R www-data:www-data merge split uploads text_output compressed protected
+sudo chmod -R 755 merge split uploads text_output compressed protected
+```
+
+---
+
+# 💡 Future Improvements
+
+- Add automatic file cleanup (cron job)
+- Add progress bars for large uploads
+- Add drag & drop UI improvements
+- Add combined compress + protect tool
+- Add Docker support
+
+---
+
+# 👨‍💻 Author
+
+Built with ❤️ using open-source Linux tools.
+
+---
+
+⭐ If you like this project, give it a star on GitHub!

@@ -1,30 +1,8 @@
 <?php
-// split-pdf.php
 // Create directories if not exist with proper permissions
 $uploadDir = "uploads/";
 $splitDir  = "split/";
 
-// Function to ensure directory exists and is writable
-function ensureDirectory($dir) {
-    if (!is_dir($dir)) {
-        if (!mkdir($dir, 0777, true)) {
-            return false;
-        }
-    }
-    // Check if writable
-    if (!is_writable($dir)) {
-        chmod($dir, 0777);
-    }
-    return is_writable($dir);
-}
-
-// Ensure directories exist and are writable
-if (!ensureDirectory($uploadDir)) {
-    die("Error: Cannot create or write to uploads directory");
-}
-if (!ensureDirectory($splitDir)) {
-    die("Error: Cannot create or write to split directory");
-}
 
 $message = "";
 $downloadLinks = [];

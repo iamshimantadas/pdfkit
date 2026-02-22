@@ -107,7 +107,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['pdfs'])) {
                             unlink($file);
                         }
                     } else {
-                        throw new Exception("Ghostscript failed with code: $returnCode");
+                        throw new Exception("Server got some error");
                     }
                     
                 } catch (Exception $e) {

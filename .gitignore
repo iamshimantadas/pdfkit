@@ -1,5 +1,6 @@
-merge/
-split/
-uploads/
-text_output/
-compressed/
+merge/*
+split/*
+uploads/*
+text_output/*
+compressed/*
+protected/*
