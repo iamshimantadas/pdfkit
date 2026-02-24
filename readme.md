@@ -7,22 +7,28 @@ This project allows users to merge, split, compress, extract text, and protect P
 
 ## 🚀 Features
 
-### 1️⃣ merge.php
+### 1. merge.php
 - Merge 2 or more PDF files
 - Drag & drop reordering before merge
 
-### 2️⃣ extract-page.php
+### 2. extract-page.php
 - Extract any single page from a PDF file
 
-### 3️⃣ pdf-to-text.php
+### 3. pdf-to-text.php
 - Extract full text from a PDF
 
-### 4️⃣ compress-pdf.php
+### 4. compress-pdf.php
 - Compress PDF file  
 - Example: 10MB → 2MB / 500KB (depends on content)
 
-### 5️⃣ protect-pdf.php
+### 5. protect-pdf.php
 - Protect PDF with password (256-bit encryption using qpdf)
+
+### 6. image-to-pdf.php
+- We can convert multiple images to pdf file. Also able to arrange them. 
+
+### 7. word-to-pdf.php
+- We can convert word file(doc/docx) to pdf file. Underhood it will use libreoffice.
 
 ---
 
@@ -35,6 +41,7 @@ sudo apt update
 sudo apt install ghostscript
 sudo apt install poppler-utils
 sudo apt install qpdf -y
+sudo apt install libreoffice
 ```
 
 ---
