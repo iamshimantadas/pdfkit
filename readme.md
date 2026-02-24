@@ -28,7 +28,7 @@ This project allows users to merge, split, compress, extract text, and protect P
 - We can convert multiple images to pdf file. Also able to arrange them. 
 
 ### 7. word-to-pdf.php
-- We can convert word file(doc/docx) to pdf file. Underhood it will use libreoffice.
+- We can convert word file(doc/docx) to pdf file. Underhood it will use libreoffice. Make sure libreoffice installed.
 
 ---
 
